@@ -1,5 +1,7 @@
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+
 const path = require('path');
 
 module.exports = {
@@ -17,6 +19,7 @@ module.exports = {
         new HtmlWebpackPlugin({
 			template: './index.html'
 		}),
+		new AddAssetHtmlPlugin({ filepath: path.join(__dirname, '../') + '/'+process.env.NODE_NAME+'.js' }),
         new BrowserSyncPlugin({
 			server: {
 				baseDir: ['dist']
