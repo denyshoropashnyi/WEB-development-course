@@ -15,4 +15,4 @@ function isCenturyNumberValid(number) {
 }
 
 getCenturyNumber(1700);
-getCenturyNumber(19505);
+getCenturyNumber(1905);
